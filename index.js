@@ -1,6 +1,17 @@
 var OFFSET = Math.pow(2, 16);
 var MAXVER = Math.pow(OFFSET, 3);
 
+/**
+  # slimver
+
+  An experimental implementation for working with
+  [slimver](https://github.com/DamonOehlman/slimver-spec).
+
+  ## Example Usage
+
+  <<< examples/encode.js
+
+**/
 var slim = module.exports = function(version) {
   var value = null;
   var invalid = false;
