@@ -12,7 +12,7 @@ An experimental implementation for working with
 
 ### slimver(version)
 
-Encode a `MAJOR.MINOR.PATCH` version string into a single numeric value.
+Pack a `MAJOR.MINOR.PATCH` version string into a single numeric value.
 
 ```js
 var slimver = require('slimver');
@@ -40,11 +40,34 @@ console.log(slimver.range('^1.2.3').map(slimver.unpack));
 Return true if the input version string satisfies the provided range
 expression.
 
-ERROR: could not find: 
+```js
+var slimver = require('slimver');
+
+console.log(slimver.satisfies('1.2.3', '^1.2.3'));
+// --> true
+
+console.log(slimver.satisfies('1.2.0', '^1.2.3'));
+// --> false
+
+console.log(slimver.satisfies('2.0.0', '^1.2.3'));
+// --> false
+
+console.log(slimver.satisfies('1.8', '^1.2.3'));
+// --> true
+
+```
 
 ### slimver.unpack(value)
 
 Convert a slimver numeric value back to it's `MAJOR.MINOR.PATCH` string format.
+
+```js
+var slimver = require('slimver');
+
+console.log(slimver.unpack(4294967296));
+// --> 1.0.0
+
+```
 
 ## License(s)
 
