@@ -1,5 +1,5 @@
 var OFFSET = Math.pow(2, 16);
-var MAXVER = Math.pow(OFFSET, 3);
+var MAXVER = Math.pow(OFFSET, 3) - 1;
 
 /**
   # slimver
@@ -39,7 +39,7 @@ var slim = module.exports = function(version) {
 };
 
 slim.invert = function(value) {
-  return MAXVER - value;
+  return value === null ? null : MAXVER - value;
 };
 
 slim.stringify = function(value) {
