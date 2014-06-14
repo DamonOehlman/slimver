@@ -91,7 +91,13 @@ function split(version) {
 }
 
 function stringify(value) {
-   var parts = new Uint16Array([
+  var parts;
+
+  if (typeof value != 'number') {
+    return null;
+  }
+
+  parts = new Uint16Array([
     value / OFFSET / OFFSET,
     value / OFFSET,
     value
