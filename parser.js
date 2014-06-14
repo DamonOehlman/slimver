@@ -31,5 +31,9 @@ var prot = Slimver.prototype;
 module.exports = Slimver;
 
 prot.valueOf = function() {
-  return this.parts && packer(this.parts);
+  if (! this.parts) {
+    throw new Error('invalid slimver');
+  }
+
+  return packer(this.parts);
 };
