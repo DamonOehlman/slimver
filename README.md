@@ -18,6 +18,36 @@ console.log(slimver('1.0.0'));
 
 ```
 
+## Reference
+
+### slimver(version)
+
+Encode a `MAJOR.MINOR.PATCH` version string into a single numeric value.
+
+### slimver.range(expression)
+
+Return a 2-element array for [low, high] range of the version values that
+will satisfy the expression.
+
+```js
+var slimver = require('slimver');
+
+console.log(slimver.range('^1.2.3').map(slimver.unpack));
+// --> [ '1.2.3', '1.65535.65535' ]
+
+```
+
+### slimver.satisfies(version, rangeExpr)
+
+Return true if the input version string satisfies the provided range
+expression.
+
+ERROR: could not find: 
+
+### slimver.unpack(value)
+
+Convert a slimver numeric value back to it's `MAJOR.MINOR.PATCH` string format.
+
 ## License(s)
 
 ### MIT
