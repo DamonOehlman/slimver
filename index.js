@@ -1,6 +1,7 @@
 var OFFSET = Math.pow(2, 16);
+var MAXVER = Math.pow(OFFSET, 3);
 
-var slimver = module.exports = function(version) {
+var slim = module.exports = function(version) {
   var value = null;
   var invalid = false;
   var parts;
@@ -26,7 +27,11 @@ var slimver = module.exports = function(version) {
   return value;
 };
 
-var stringify = slimver.stringify = function(value) {
+slim.invert = function(value) {
+  return MAXVER - value;
+};
+
+slim.stringify = function(value) {
    var parts = new Uint16Array([
     value / OFFSET / OFFSET,
     value / OFFSET,
