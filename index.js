@@ -82,6 +82,11 @@ function split(version) {
     return val;
   });
 
+  // ensure we have enough parts
+  while (parts.length < 3) {
+    parts.push(0);
+  }
+
   return invalid ? null : parts;
 }
 
