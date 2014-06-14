@@ -12,8 +12,16 @@ var MAXVER = Math.pow(OFFSET, 3) - 1;
 
   <<< examples/encode.js
 
+  ## Reference
+
 **/
 
+/**
+  ### slimver(version)
+
+  Encode a `MAJOR.MINOR.PATCH` version string into a single numeric value.
+
+**/
 function slim(version) {
   var parts = Array.isArray(version) ? version : split(version);
 
@@ -49,6 +57,15 @@ function invert(value) {
   return value === null ? null : MAXVER - value;
 }
 
+/**
+  ### slimver.range(expression)
+
+  Return a 2-element array for [low, high] range of the version values that
+  will satisfy the expression.
+
+  <<< examples/range.js
+
+**/
 function range(expression) {
   var firstChar;
   var parts;
@@ -72,6 +89,15 @@ function range(expression) {
   return compatibleWith(parts.join('.'));
 }
 
+/**
+  ### slimver.satisfies(version, rangeExpr)
+
+  Return true if the input version string satisfies the provided range
+  expression.
+
+  <<< examples/satisfies.js
+
+**/
 function satisfies(version, rangeExpr) {
   var bounds = range(rangeExpr);
   var v = slim(version);
@@ -107,6 +133,12 @@ function split(version) {
   return invalid ? null : parts;
 }
 
+/**
+  ### slimver.stringify(value)
+
+  Convert a slimver numeric value back to it's `MAJOR.MINOR.PATCH` string format.
+
+**/
 function stringify(value) {
   var parts;
 
