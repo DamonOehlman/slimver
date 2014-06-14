@@ -51,6 +51,11 @@ function invert(value) {
 
 function range(expression) {
   var firstChar;
+  var parts;
+
+  if (expression === 'any' || expression == '' || expression === '*') {
+    return [0, MAXVER];
+  }
 
   expression = ('' + expression).trim();
   firstChar = expression.charAt(0);
@@ -59,7 +64,12 @@ function range(expression) {
     return compatibleWith(expression.slice(1));
   }
 
-  return [];
+  // split the string
+  parts = expression.split('.').filter(function(part) {
+    return !isNaN(+part);
+  });
+
+  return compatibleWith(parts.join('.'));
 }
 
 function split(version) {
