@@ -1,0 +1,27 @@
+{
+  "name": "slimver",
+  "version": "0.0.0",
+  "description": "Slimver parser, packer, unpacker and range creator",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/slimver.git"
+  },
+  "keywords": [
+    "slimver",
+    "version",
+    "semver"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/slimver/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/slimver",
+  "devDependencies": {
+    "tape": "^2"
+  }
+}
