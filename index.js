@@ -134,12 +134,12 @@ function split(version) {
 }
 
 /**
-  ### slimver.stringify(value)
+  ### slimver.unpack(value)
 
   Convert a slimver numeric value back to it's `MAJOR.MINOR.PATCH` string format.
 
 **/
-function stringify(value) {
+function unpack(value) {
   var parts;
 
   if (typeof value != 'number') {
@@ -160,6 +160,6 @@ function stringify(value) {
 slim.invert = invert;
 slim.range = range;
 slim.satisfies = satisfies;
-slim.stringify = stringify;
+slim.unpack = slim.stringify = unpack;
 
 module.exports = slim;
