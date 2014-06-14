@@ -6,6 +6,9 @@ An experimental implementation for working with
 
 [![NPM](https://nodei.co/npm/slimver.png)](https://nodei.co/npm/slimver/)
 
+
+[![browser support](https://ci.testling.com/DamonOehlman/slimver.png)](https://ci.testling.com/DamonOehlman/slimver)
+
 [![experimental](https://img.shields.io/badge/stability-experimental-red.svg)](https://github.com/badges/stability-badges) [![Build Status](https://img.shields.io/travis/DamonOehlman/slimver.svg?branch=master)](https://travis-ci.org/DamonOehlman/slimver) 
 
 ## Reference
