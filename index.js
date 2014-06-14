@@ -8,10 +8,6 @@ var MAXVER = Math.pow(OFFSET, 3) - 1;
   An experimental implementation for working with
   [slimver](https://github.com/DamonOehlman/slimver-spec).
 
-  ## Example Usage
-
-  <<< examples/encode.js
-
   ## Reference
 
 **/
@@ -20,6 +16,8 @@ var MAXVER = Math.pow(OFFSET, 3) - 1;
   ### slimver(version)
 
   Encode a `MAJOR.MINOR.PATCH` version string into a single numeric value.
+
+  <<< examples/encode.js
 
 **/
 function slim(version) {

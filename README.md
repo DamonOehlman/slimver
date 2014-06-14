@@ -8,7 +8,11 @@ An experimental implementation for working with
 
 [![experimental](https://img.shields.io/badge/stability-experimental-red.svg)](https://github.com/badges/stability-badges) [![Build Status](https://img.shields.io/travis/DamonOehlman/slimver.svg?branch=master)](https://travis-ci.org/DamonOehlman/slimver) 
 
-## Example Usage
+## Reference
+
+### slimver(version)
+
+Encode a `MAJOR.MINOR.PATCH` version string into a single numeric value.
 
 ```js
 var slimver = require('slimver');
@@ -17,12 +21,6 @@ console.log(slimver('1.0.0'));
 // --> 4294967296
 
 ```
-
-## Reference
-
-### slimver(version)
-
-Encode a `MAJOR.MINOR.PATCH` version string into a single numeric value.
 
 ### slimver.range(expression)
 
