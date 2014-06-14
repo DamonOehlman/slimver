@@ -1,5 +1,5 @@
 var packer = require('./packer');
-var MAXVAL = Math.pow(2, 16);
+var OFFSET = require('./offset');
 
 function Slimver(version) {
   var parts;
@@ -19,7 +19,7 @@ function Slimver(version) {
     parts = ('' + version).split('.').map(function(part) {
       var val = +part;
 
-      invalid = invalid || isNaN(val) || (val >= MAXVAL);
+      invalid = invalid || isNaN(val) || (val >= OFFSET);
       return val;
     });
   }
