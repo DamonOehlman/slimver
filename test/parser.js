@@ -31,6 +31,16 @@ test('1 as a number encodes as 1.0.0', function(t) {
   t.equal(slimver(1), 4294967296);
 });
 
+test('1 as a string encodes as 1.0.0', function(t) {
+  t.plan(1);
+  t.equal(slimver('1'), 4294967296);
+});
+
+test('1.0 as a string encodes as 1.0.0', function(t) {
+  t.plan(1);
+  t.equal(slimver('1.0'), 4294967296);
+});
+
 test('1.0.1', function(t) {
   t.plan(1);
   t.equal(slimver(t.name), 4294967297);
