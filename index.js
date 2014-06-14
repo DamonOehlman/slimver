@@ -15,9 +15,9 @@ var MAXVER = Math.pow(OFFSET, 3) - 1;
 /**
   ### slimver(version)
 
-  Encode a `MAJOR.MINOR.PATCH` version string into a single numeric value.
+  Pack a `MAJOR.MINOR.PATCH` version string into a single numeric value.
 
-  <<< examples/encode.js
+  <<< examples/pack.js
 
 **/
 function slim(version) {
@@ -135,6 +135,8 @@ function split(version) {
   ### slimver.unpack(value)
 
   Convert a slimver numeric value back to it's `MAJOR.MINOR.PATCH` string format.
+
+  <<< examples/unpack.js
 
 **/
 function unpack(value) {
