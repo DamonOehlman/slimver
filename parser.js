@@ -1,8 +1,9 @@
 var packer = require('./packer');
+var MAXVAL = Math.pow(2, 16);
 
 function Slimver(version) {
   var parts;
-  var invalid = (! version);
+  var invalid;
 
   if (! (this instanceof Slimver)) {
     return new Slimver(version);
@@ -12,17 +13,18 @@ function Slimver(version) {
     version = (version | 0) + '.0.0';
   }
 
+  invalid = (! version);
   if (version) {
     // extract the parts and convert to numeric values
-    parts = new Uint16Array(('' + version).split('.').map(function(part) {
+    parts = ('' + version).split('.').map(function(part) {
       var val = +part;
 
       invalid = invalid || isNaN(val) || (val >= MAXVAL);
       return val;
-    }));
+    });
   }
 
-  this.parts = (! invalid) && parts;
+  this.parts = invalid ? null : parts;
 }
 
 var prot = Slimver.prototype;
