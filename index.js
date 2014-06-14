@@ -72,6 +72,13 @@ function range(expression) {
   return compatibleWith(parts.join('.'));
 }
 
+function satisfies(version, rangeExpr) {
+  var bounds = range(rangeExpr);
+  var v = slim(version);
+
+  return v !== null && bounds && v >= bounds[0] && v <= bounds[1];
+}
+
 function split(version) {
   var invalid = false;
   var parts;
@@ -119,7 +126,8 @@ function stringify(value) {
 /* exports */
 
 slim.invert = invert;
-slim.stringify = stringify;
 slim.range = range;
+slim.satisfies = satisfies;
+slim.stringify = stringify;
 
 module.exports = slim;
