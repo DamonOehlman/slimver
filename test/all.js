@@ -1,2 +1,3 @@
 require('./parser');
-require('./packer');
+require('./comparison');
+require('./stringify');
