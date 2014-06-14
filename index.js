@@ -67,6 +67,7 @@ function invert(value) {
 function range(expression) {
   var firstChar;
   var parts;
+  var val;
 
   if (expression === 'any' || expression == '' || expression === '*') {
     return [0, MAXVER];
@@ -83,6 +84,12 @@ function range(expression) {
   parts = expression.split('.').filter(function(part) {
     return !isNaN(+part);
   });
+
+  // if we have exactly 3 parts, then range from and two the low to high value
+  if (parts.length === 3) {
+    val = slim(parts.join('.'));
+    return [val, val];
+  }
 
   return compatibleWith(parts.join('.'));
 }
