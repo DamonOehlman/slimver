@@ -6,11 +6,6 @@ test('0.0.0', function(t) {
   t.equal(slimver(t.name), 0);
 });
 
-test('0 as a number encodes as 0.0.0', function(t) {
-  t.plan(1);
-  t.equal(slimver(0), 0);
-});
-
 test('0.0.1', function(t) {
   t.plan(1);
   t.equal(slimver(t.name), 1);
@@ -24,11 +19,6 @@ test('0.1.0', function(t) {
 test('1.0.0', function(t) {
   t.plan(1);
   t.equal(slimver(t.name), 4294967296);
-});
-
-test('1 as a number encodes as 1.0.0', function(t) {
-  t.plan(1);
-  t.equal(slimver(1), 4294967296);
 });
 
 test('1 as a string encodes as 1.0.0', function(t) {
@@ -64,6 +54,16 @@ test('65535.65535.65536', function(t) {
 test('2.0.0', function(t) {
   t.plan(1);
   t.equal(slimver(t.name), 8589934592);
+});
+
+test('0 (numeric) is passed through', function(t) {
+  t.plan(1);
+  t.equal(slimver(0), 0);
+});
+
+test('1 (numeric) is passed through', function(t) {
+  t.plan(1);
+  t.equal(slimver(1), 1);
 });
 
 test('2.0.0-beta4', function(t) {
