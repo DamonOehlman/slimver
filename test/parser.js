@@ -66,6 +66,14 @@ test('1 (numeric) is passed through', function(t) {
   t.equal(slimver(1), 1);
 });
 
+test('parsing twice yields the same value', function(t) {
+  var val;
+
+  t.plan(2);
+  t.equal(val = slimver('1.0.0'), 4294967296);
+  t.equal(slimver(val), 4294967296);
+});
+
 test('2.0.0-beta4', function(t) {
   t.plan(1);
   t.equal(slimver(t.name), null);
