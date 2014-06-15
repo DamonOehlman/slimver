@@ -21,8 +21,13 @@ var MAXVER = Math.pow(OFFSET, 3) - 1;
 
 **/
 function slim(version) {
-  var parts = Array.isArray(version) ? version : split(version);
+  var parts;
 
+  if (typeof version == 'number') {
+    return version;
+  }
+
+  parts = Array.isArray(version) ? version : split(version);
   return parts ?
     parts[0] * (OFFSET * OFFSET) + parts[1] * OFFSET + parts[2] :
     null;
