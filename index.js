@@ -35,25 +35,31 @@ function slim(version) {
 
 function compatibleWith(version) {
   var parts = split(version);
-  var low;
 
   if (! parts) {
     return null;
   }
 
-  // low bounds is always the version
-  low = slim(parts);
+  return [slim(parts), slim([parts[0], MAXSEG, MAXSEG])];
+}
 
-  // handle the ^0.0.x case
-  if (parts[0] === 0 && parts[1] === 0) {
-    return [ low, low ];
-  }
-  // handle the ^0.x.x case
-  else if (parts[0] === 0) {
-    return [ low, slim([parts[0], parts[1], MAXSEG])];
+function rangeFromPattern(parts) {
+  var low = [].concat(parts);
+  var high = [].concat(parts);
+
+  if (! parts) {
+    return null;
   }
 
-  return [low, slim([parts[0], MAXSEG, MAXSEG])];
+  while (low.length < 3) {
+    low.push(0);
+  }
+
+  while (high.length < 3) {
+    high.push(MAXSEG);
+  }
+
+  return [slim(low), slim(high)];
 }
 
 function invert(value) {
@@ -96,7 +102,7 @@ function range(expression) {
     return [val, val];
   }
 
-  return compatibleWith(parts.join('.'));
+  return rangeFromPattern(parts);
 }
 
 /**
