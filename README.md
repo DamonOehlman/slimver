@@ -9,7 +9,7 @@ An experimental implementation for working with
 
 [![browser support](https://ci.testling.com/DamonOehlman/slimver.png)](https://ci.testling.com/DamonOehlman/slimver)
 
-[![experimental](https://img.shields.io/badge/stability-experimental-red.svg)](https://github.com/badges/stability-badges) [![Build Status](https://img.shields.io/travis/DamonOehlman/slimver.svg?branch=master)](https://travis-ci.org/DamonOehlman/slimver) 
+[![unstable](https://img.shields.io/badge/stability-unstable-yellowgreen.svg)](https://github.com/dominictarr/stability#unstable) [![Build Status](https://img.shields.io/travis/DamonOehlman/slimver.svg?branch=master)](https://travis-ci.org/DamonOehlman/slimver) 
 
 ## Reference
 
