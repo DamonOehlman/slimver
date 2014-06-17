@@ -1,6 +1,6 @@
 {
   "name": "slimver",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Slimver parser, packer, unpacker and range creator",
   "main": "index.js",
   "scripts": {
