@@ -31,9 +31,14 @@ test('0.2.0 does not satisfy ^0.2.3', function(t) {
   t.notOk(satisfies('0.2', '^0.2.3'));
 });
 
-test('0.3.0 does not satisfy ^0.2.3', function(t) {
+test('0.3.0 satisfies ^0.2.3', function(t) {
   t.plan(1);
-  t.notOk(satisfies('0.3', '^0.2.3'));
+  t.ok(satisfies('0.3', '^0.2.3'));
+});
+
+test('1.0.0 does not satisfy ^0.2.3', function(t) {
+  t.plan(1);
+  t.notOk(satisfies('1.0.0', '^0.2.3'));
 });
 
 test('0.2.453 satisfies ^0.2.3', function(t) {
